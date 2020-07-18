@@ -26,7 +26,7 @@ namespace BookManagement.Service.Implementation
 
         public async Task<Response> GetBooks()
         {
-            return await _repositoryQuery.Get();    
+           // return await _repositoryQuery.Get();    
         }
 
         public Task<Response> UpdateABook(int bookID)
