@@ -13,7 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BookManagement.Core\BookManagement.Core.csproj" />
     <ProjectReference Include="..\BookManagement.Domain\BookManagement.Domain.csproj" />
+    <ProjectReference Include="..\BookManagement.Service\BookManagement.Service.csproj" />
   </ItemGroup>
 
 
