@@ -1,10 +1,16 @@
-﻿using System;
+﻿using BookManagement.Domain.API;
+using BookManagement.Domain.Entity;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BookManagement.Domain.DBRepository
 {
-    class IRepositoryCommand
+    public interface IRepositoryCommand<T>
     {
+        Task<Response> Create(Book model);
+        Task<Response> Update(Book model);
+        Task<Response> Delete(int id);
     }
-}
+} 
