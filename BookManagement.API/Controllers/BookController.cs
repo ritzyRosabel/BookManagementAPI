@@ -2,46 +2,64 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BookManagement.Core.Interface;
+using BookManagement.Domain.API;
+using BookManagement.Domain.Entity;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace BookManagement.API.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
     public class BookController : ControllerBase
     {
+        private readonly IBookService _bookService;
+        public BookController(IBookService bookService)
+        {
+            _bookService = bookService;
+        }
         // GET: api/<BookController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        [Route("api/GetBooks")]
+
+        public async Task<IActionResult> Get()
         {
-            return new string[] { "value1", "value2" };
+            return Ok(await _bookService.GetBooks());
         }
 
         // GET api/<BookController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet]
+        [Route("api/GetBookById")]
+        public async Task<IActionResult> GetById(int id)
         {
-            return "value";
+            return Ok(await _bookService.GetBookByID(id));
         }
 
         // POST api/<BookController>
         [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
+        [Route("api/PostBook")]
 
-        // PUT api/<BookController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<IActionResult> Post([FromBody] BookRequest book)
         {
+            return Ok(await _bookService.CreateBooks(book));
+
+        }
+        [HttpPut]
+        // PUT api/<BookController>/5
+        [Route("api/UpdateBook")]
+        public async Task<IActionResult> Put([FromBody] Book book)
+        {
+            return Ok(await _bookService.UpdateABook(book));
         }
 
         // DELETE api/<BookController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete]
+        [Route("api/DeleteBook")]
+
+        public async Task<IActionResult> Delete(int id)
         {
+            return Ok(await _bookService.DeleteABook(id));
         }
     }
 }
