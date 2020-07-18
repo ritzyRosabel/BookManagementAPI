@@ -1,4 +1,5 @@
-﻿using BookManagement.Domain.Entity;
+﻿using BookManagement.Domain.API;
+using BookManagement.Domain.Entity;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,7 +9,7 @@ namespace BookManagement.Domain.DBRepository
 {
     public interface IRepositoryQuery
     {
-        Task<List<Book>> Get();
-        Task<Book> GetById(int  id);
+        Task<Response> Get();
+        Task<Response> GetById(int  id);
     }
 }

@@ -1,5 +1,7 @@
-﻿using BookManagement.Domain.DB;
+﻿using BookManagement.Domain.API;
+using BookManagement.Domain.DB;
 using BookManagement.Domain.Entity;
+using BookManagement.Domain.Utility;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -16,14 +18,18 @@ namespace BookManagement.Domain.DBRepository
         {
             _db = db;
         }
-        public async Task<List<Book>> Get()
+        public async Task<Response> Get()
         {
-            return await _db.Books.ToListAsync();
+            var response = Utilities.InitializeResponse();
+            response.Data =  await _db.Books.ToListAsync();
+            return response;
         }
 
-        public async Task<Book> GetById(int id)
+        public async Task<Response> GetById(int id)
         {
-            return await _db.Books.FirstOrDefaultAsync(B=>B.Id==id);  
+            var response = Utilities.InitializeResponse();
+            response.Data =  await _db.Books.FirstOrDefaultAsync(B=>B.Id==id);
+            return response;
         
         }
     }
