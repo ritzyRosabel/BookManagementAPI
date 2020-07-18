@@ -8,7 +8,7 @@ namespace BookManagement.Domain.DBRepository
 {
     public interface IRepositoryQuery
     {
-        Task<Book> Get();
+        Task<List<Book>> Get();
         Task<Book> GetById(int  id);
     }
 }
