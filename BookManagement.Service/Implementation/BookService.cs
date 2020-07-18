@@ -9,22 +9,27 @@ namespace BookManagement.Service.Implementation
 {
     public class BookService : IBookService
     {
-        public Response CreateBooks(BookRequest book)
+      //  private IReq
+        public BookService()
+        {
+
+        }
+        public Task<Response> CreateBooks(BookRequest book)
         {
             throw new NotImplementedException();
         }
 
-        public Response DeleteABook(int bookID)
+        public Task<Response> DeleteABook(int bookID)
         {
             throw new NotImplementedException();
         }
 
         public async Task<Response> GetBooks()
         {
-            return await
+            return await _repositoryQuery.Get();    
         }
 
-        public Response UpdateABook(int bookID)
+        public Task<Response> UpdateABook(int bookID)
         {
             throw new NotImplementedException();
         }
