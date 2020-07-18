@@ -21,9 +21,10 @@ namespace BookManagement.Domain.DBRepository
             return await _db.Books.ToListAsync();
         }
 
-        public Task<Book> GetById(int id)
+        public async Task<Book> GetById(int id)
         {
-            throw new NotImplementedException();
+            return await _db.Books.FirstOrDefaultAsync(B=>B.Id==id);  
+        
         }
     }
 }
