@@ -1,5 +1,8 @@
 ﻿using BookManagement.Domain.API;
+using BookManagement.Domain.DB;
 using BookManagement.Domain.Entity;
+using BookManagement.Domain.Utility;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,19 +12,41 @@ namespace BookManagement.Domain.DBRepository
 {
     class RepositoryCommand : IRepositoryCommand
     {
-        public Task<Response> Create(Book model)
+        private readonly ApplicationDbContext _db;
+        public RepositoryCommand(ApplicationDbContext db)
         {
-            throw new NotImplementedException();
+            _db = db;
+        }
+        public async Task<Response> Create(Book model)
+        {
+            var response = Utilities.InitializeResponse();
+            _db.Books.Add(model);
+            await _db.SaveChangesAsync();
+            response.Data = model;
+            return response;
         }
 
-        public Task<Response> Delete(int id)
+        public async Task<Response> Delete(int id)
         {
-            throw new NotImplementedException();
+            var response = Utilities.InitializeResponse();
+            var findBookById = _db.Books.FirstOrDefaultAsync(b => b.Id == id);
+            if (findBookById != null)
+            {
+                _db.Remove(findBookById);
+                await _db.SaveChangesAsync();
+            }
+            return response;
         }
 
-        public Task<Response> Update(Book model)
+        public async Task<Response> Update(Book model)
         {
-            throw new NotImplementedException();
+            var response = Utilities.InitializeResponse();
+            if (model.Id != 0)
+            {
+                _db.Update(model);
+                await _db.SaveChangesAsync();
+            }
+            return response;
         }
     }
 }
