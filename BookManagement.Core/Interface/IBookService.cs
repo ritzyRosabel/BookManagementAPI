@@ -3,15 +3,16 @@ using BookManagement.Domain.Entity;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BookManagement.Core.Interface
 {
     public interface IBookService
     {
-        Response GetBooks();
-        Response CreateBooks(BookRequest book);
-        Response UpdateABook(int bookID);
-        Response DeleteABook(int bookID);
+        Task<Response> GetBooks();
+        Task<Response> CreateBooks(BookRequest book);
+        Task<Response> UpdateABook(int bookID);
+        Task<Response> DeleteABook(int bookID);
 
     }
 }

@@ -3,6 +3,7 @@ using BookManagement.Domain.API;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BookManagement.Service.Implementation
 {
@@ -18,9 +19,9 @@ namespace BookManagement.Service.Implementation
             throw new NotImplementedException();
         }
 
-        public Response GetBooks()
+        public async Task<Response> GetBooks()
         {
-            throw new NotImplementedException();
+            return await
         }
 
         public Response UpdateABook(int bookID)
