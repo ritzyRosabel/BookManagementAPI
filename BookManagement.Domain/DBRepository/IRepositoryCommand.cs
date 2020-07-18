@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BookManagement.Domain.DBRepository
 {
-    public interface IRepositoryCommand<T>
+    public interface IRepositoryCommand
     {
         Task<Response> Create(Book model);
         Task<Response> Update(Book model);
