@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BookManagement.Domain.DBRepository
 {
-    class RepositoryCommand : IRepositoryCommand
+    public class RepositoryCommand : IRepositoryCommand
     {
         private readonly ApplicationDbContext _db;
         public RepositoryCommand(ApplicationDbContext db)

@@ -11,8 +11,8 @@ namespace BookManagement.Service.Implementation
 {
     public class BookService : IBookService
     {
-        private IRepositoryQuery _repositoryQuery;
-        private IRepositoryCommand _repositoryCommand;
+        private readonly IRepositoryQuery _repositoryQuery;
+        private readonly  IRepositoryCommand _repositoryCommand;
         public BookService(IRepositoryCommand repositoryCommand,IRepositoryQuery repositoryQuery)
         {
             _repositoryCommand = repositoryCommand;

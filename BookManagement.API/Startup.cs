@@ -15,6 +15,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
 using BookManagement.Core.Interface;
 using BookManagement.Service.Implementation;
+using BookManagement.Domain.DBRepository;
 
 namespace BookManagement.API
 {
@@ -33,6 +34,8 @@ namespace BookManagement.API
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllers();
             services.AddScoped<IBookService, BookService>();
+            services.AddScoped<IRepositoryCommand, RepositoryCommand>();
+            services.AddScoped<IRepositoryQuery, RepositoryQuery>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

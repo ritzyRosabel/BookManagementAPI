@@ -9,10 +9,12 @@ namespace BookManagement.Domain.Utility
     {
         public static Response InitializeResponse()
         {
-            var response = new Response();
-            response.RequestId = Guid.NewGuid().ToString();
-            response.RequestCode = "00";
-            response.RequestMessage = "Successful";
+            var response = new Response
+            {
+                RequestId = Guid.NewGuid().ToString(),
+                RequestCode = "00",
+                RequestMessage = "Successful"
+            };
             return response;
         }
     }
