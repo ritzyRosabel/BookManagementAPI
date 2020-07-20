@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookManagement.Domain.DBRepository
+namespace BookManagement.Core.Interface
 {
     public interface IRepositoryCommand
     {

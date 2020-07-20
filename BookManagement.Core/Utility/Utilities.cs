@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BookManagement.Domain.Utility
+namespace BookManagement.Core.Utility
 {
     public class Utilities
     {

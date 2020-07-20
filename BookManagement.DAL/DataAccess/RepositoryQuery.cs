@@ -1,7 +1,7 @@
-﻿using BookManagement.Domain.API;
-using BookManagement.Domain.DB;
-using BookManagement.Domain.Entity;
-using BookManagement.Domain.Utility;
+﻿
+using BookManagement.Core.Utility;
+using BookManagement.DAL.DB;
+using BookManagement.Domain.API;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

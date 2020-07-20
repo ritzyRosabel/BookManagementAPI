@@ -4,16 +4,14 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BookManagement.Domain.DB
+namespace BookManagement.DAL.DB
 {
     public class ApplicationDbContext:DbContext
     {
-
-        public ApplicationDbContext (DbContextOptions<ApplicationDbContext> options) : base(options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
 
         }
-        public DbSet<Book> Books { get; set; }
-
+        public DbSet<Book>  Books { get; set; }
     }
 }
