@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BookManagement.Domain.DB;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -16,6 +15,7 @@ using Microsoft.EntityFrameworkCore;
 using BookManagement.Core.Interface;
 using BookManagement.Service.Implementation;
 using BookManagement.Domain.DBRepository;
+using BookManagement.DAL.DB;
 
 namespace BookManagement.API
 {
