@@ -4,8 +4,8 @@ using System.Text;
 
 namespace BookManagement.Core.Interface
 {
-    public interface IEntity
+    public interface IEntity<Int>
     {
-        int Id { get; set; }
+        Int Id { get; set; }
     }
 }
