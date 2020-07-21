@@ -5,10 +5,9 @@ using System.Text;
 
 namespace BookManagement.DAL.Entity
 {
-   public class Book
+   public class Book:BaseEntity<int>
     {
-        [Key]
-        public int Id { get; set; }
+
         public string Name { get; set; }
         public string Author { get; set; }
         public string ISBN  { get; set; }
