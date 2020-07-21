@@ -9,5 +9,10 @@ namespace BookManagement.API.Extensions
 {
     public class ServiceExtensions
     {
+
+        public static void AddApplicationServer(IServiceCollection services, IConfiguration configuration)
+        {
+
+        }
     }
 }
