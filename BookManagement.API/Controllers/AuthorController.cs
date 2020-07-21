@@ -11,5 +11,6 @@ namespace BookManagement.API.Controllers
     [ApiController]
     public class AuthorController : ControllerBase
     {
+
     }
 }
