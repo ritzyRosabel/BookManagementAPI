@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BookManagement.Domain.API
+namespace BookManagement.Core.API
 {
     public class BookRequest
     {

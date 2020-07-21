@@ -9,9 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookManagement.Core", "Book
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookManagement.Service", "BookManagement.Service\BookManagement.Service.csproj", "{270DEDD2-D7F1-4ADC-9108-364FE3368DED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookManagement.Domain", "BookManagement.Domain\BookManagement.Domain.csproj", "{ADD350F2-6750-429C-899F-44D04F795C8D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookManagement.DAL", "BookManagement.DAL\BookManagement.DAL.csproj", "{5D0D2007-F5A0-482C-8097-1AEA3315B077}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookManagement.DAL", "BookManagement.DAL\BookManagement.DAL.csproj", "{5D0D2007-F5A0-482C-8097-1AEA3315B077}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,10 +29,6 @@ Global
 		{270DEDD2-D7F1-4ADC-9108-364FE3368DED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{270DEDD2-D7F1-4ADC-9108-364FE3368DED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{270DEDD2-D7F1-4ADC-9108-364FE3368DED}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ADD350F2-6750-429C-899F-44D04F795C8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ADD350F2-6750-429C-899F-44D04F795C8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ADD350F2-6750-429C-899F-44D04F795C8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ADD350F2-6750-429C-899F-44D04F795C8D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5D0D2007-F5A0-482C-8097-1AEA3315B077}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5D0D2007-F5A0-482C-8097-1AEA3315B077}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D0D2007-F5A0-482C-8097-1AEA3315B077}.Release|Any CPU.ActiveCfg = Release|Any CPU

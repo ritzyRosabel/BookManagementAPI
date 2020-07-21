@@ -8,8 +8,4 @@
     <Folder Include="Helper\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\BookManagement.Domain\BookManagement.Domain.csproj" />
-  </ItemGroup>
-
 </Project>

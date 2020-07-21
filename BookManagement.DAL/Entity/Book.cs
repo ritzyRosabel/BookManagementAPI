@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace BookManagement.Domain.Entity
+namespace BookManagement.DAL.Entity
 {
    public class Book
     {
