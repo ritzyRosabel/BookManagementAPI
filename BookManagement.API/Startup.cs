@@ -33,10 +33,7 @@ namespace BookManagement.API
         {
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllers();
-            services.AddScoped<IBookService, BookService>();
-            services.AddScoped<IRepositoryCommand, RepositoryCommand>();
-            services.AddScoped<IRepositoryQuery, RepositoryQuery>();
-        }
+              }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
