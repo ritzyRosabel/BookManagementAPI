@@ -1,5 +1,6 @@
 ﻿
 using BookManagement.Core.Utility;
+using BookManagement.DAL.DataAccess;
 using BookManagement.DAL.DB;
 using BookManagement.Domain.API;
 using Microsoft.EntityFrameworkCore;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace BookManagement.Domain.DBRepository
 {
-    public class RepositoryQuery : IRepositoryQuery
+    public class RepositoryQuery : IRepositoryQuery<Response>
     {
         private readonly ApplicationDbContext _db;
         public RepositoryQuery(ApplicationDbContext db)

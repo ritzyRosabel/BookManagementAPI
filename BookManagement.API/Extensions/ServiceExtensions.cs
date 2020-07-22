@@ -16,11 +16,11 @@ namespace BookManagement.API.Extensions
         public static void AddApplicationServer(IServiceCollection services, IConfiguration configuration)
         {
             services.AddScoped<IRepositoryCommand, RepositoryCommand>();
-            services.AddScoped<IRepositoryQuery, RepositoryQuery>();
+            services.AddScoped(typeof(IRepositoryQuery<>),typeof(RepositoryQuery<>));
 
             services.AddScoped<IBookService, BookService>();
 
 
-        }
+        }<
     }
 }

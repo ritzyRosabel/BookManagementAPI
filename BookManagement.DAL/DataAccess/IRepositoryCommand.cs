@@ -1,11 +1,10 @@
 ﻿using BookManagement.Domain.API;
-using BookManagement.Domain.Entity;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookManagement.Core.Interface
+namespace BookManagement.DAL.DataAccess
 {
     public interface IRepositoryCommand
     {

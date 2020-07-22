@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BookManagement.Core\BookManagement.Core.csproj" />
+    <ProjectReference Include="..\BookManagement.DAL\BookManagement.DAL.csproj" />
   </ItemGroup>
 
 </Project>

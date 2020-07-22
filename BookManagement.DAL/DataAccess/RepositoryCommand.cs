@@ -1,8 +1,9 @@
 ﻿using BookManagement.Core.Interface;
 using BookManagement.Core.Utility;
 using BookManagement.DAL.DB;
+using BookManagement.DAL.Entity;
 using BookManagement.Domain.API;
-using BookManagement.Domain.Entity;
+using BookManagement.DAL.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

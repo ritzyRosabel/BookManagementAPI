@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BookManagement.DAL.Entity
 {
-   public class Book:BaseEntity<int>
+   public class Book :BaseEntity<int>
     {
 
         public string Name { get; set; }

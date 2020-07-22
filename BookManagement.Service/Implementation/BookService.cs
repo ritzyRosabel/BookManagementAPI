@@ -1,7 +1,8 @@
-﻿using BookManagement.Core.Interface;
+﻿using BookManagement.Core.API;
+using BookManagement.Core.Interface;
+using BookManagement.DAL.Entity;
 using BookManagement.Domain.API;
 using BookManagement.Domain.DBRepository;
-using BookManagement.Domain.Entity;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,7 +12,7 @@ namespace BookManagement.Service.Implementation
 {
     public class BookService : IBookService
     {
-        private readonly IRepositoryQuery _repositoryQuery;
+        private readonly IRepositoryQuery<> _repositoryQuery;
         private readonly  IRepositoryCommand _repositoryCommand;
         public BookService(IRepositoryCommand repositoryCommand,IRepositoryQuery repositoryQuery)
         {
