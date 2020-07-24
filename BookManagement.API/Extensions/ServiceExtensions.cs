@@ -1,4 +1,5 @@
 ﻿using BookManagement.Core.Interface;
+using BookManagement.DAL.DataAccess;
 using BookManagement.Domain.DBRepository;
 using BookManagement.Service.Implementation;
 using Microsoft.Extensions.Configuration;
@@ -15,12 +16,12 @@ namespace BookManagement.API.Extensions
 
         public static void AddApplicationServer(IServiceCollection services, IConfiguration configuration)
         {
-            services.AddScoped<IRepositoryCommand, RepositoryCommand>();
+            services.AddScoped(typeof(IRepositoryCommand<>),typeof( RepositoryCommand<>));
             services.AddScoped(typeof(IRepositoryQuery<>),typeof(RepositoryQuery<>));
 
-            services.AddScoped<IBookService, BookService>();
+            services.AddScoped(typeof(IBookService<>),typeof( BookService<>));
 
 
-        }<
+        }
     }
 }

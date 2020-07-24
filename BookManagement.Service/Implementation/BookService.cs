@@ -1,20 +1,19 @@
 ﻿using BookManagement.Core.API;
 using BookManagement.Core.Interface;
+using BookManagement.DAL.DataAccess;
 using BookManagement.DAL.Entity;
-using BookManagement.Domain.API;
 using BookManagement.Domain.DBRepository;
 using System;
-using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BookManagement.Service.Implementation
 {
-    public class BookService : IBookService
+    public class BookService<TEntity> : IBookService<TEntity>
     {
-        private readonly IRepositoryQuery<> _repositoryQuery;
-        private readonly  IRepositoryCommand _repositoryCommand;
-        public BookService(IRepositoryCommand repositoryCommand,IRepositoryQuery repositoryQuery)
+        private readonly IRepositoryQuery<Response> _repositoryQuery;
+        private readonly  IRepositoryCommand<Response> _repositoryCommand;
+        public BookService(IRepositoryCommand<Response> repositoryCommand,IRepositoryQuery<Response> repositoryQuery)
         {
             _repositoryCommand = repositoryCommand;
             _repositoryQuery = repositoryQuery;

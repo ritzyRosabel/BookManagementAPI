@@ -1,4 +1,4 @@
-﻿using BookManagement.Domain.Entity;
+﻿using BookManagement.DAL.Entity;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

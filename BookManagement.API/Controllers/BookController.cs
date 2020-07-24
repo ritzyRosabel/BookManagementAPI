@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BookManagement.Core.API;
 using BookManagement.Core.Interface;
-using BookManagement.Domain.API;
-using BookManagement.Domain.Entity;
+using BookManagement.DAL.Entity;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -14,8 +14,10 @@ namespace BookManagement.API.Controllers
     [ApiController]
     public class BookController : ControllerBase
     {
-        private readonly IBookService _bookService;
-        public BookController(IBookService bookService)
+        //If this code works, then it was writen by Rosabel Olugbenga. If it doesn't, then i can only say one thing  "IT IS WHAT IT IS".
+
+        private readonly IBookService<Response> _bookService;
+        public BookController(IBookService<Response> bookService)
         {
             _bookService = bookService;
         }
