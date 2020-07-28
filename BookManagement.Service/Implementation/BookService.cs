@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace BookManagement.Service.Implementation
 {
-    public class BookService<TEntity> : IBookService<TEntity>
+    public class BookService<TEntity> : IBookService
     {
-        private readonly IRepositoryQuery<Response> _repositoryQuery;
-        private readonly  IRepositoryCommand<Response> _repositoryCommand;
-        public BookService(IRepositoryCommand<Response> repositoryCommand,IRepositoryQuery<Response> repositoryQuery)
+        private readonly IRepositoryQuery<Book,int> _repositoryQuery;
+        private readonly  IRepositoryCommand<Book, int> _repositoryCommand;
+        public BookService(IRepositoryCommand<Book, int> repositoryCommand,IRepositoryQuery<Book, int> repositoryQuery)
         {
             _repositoryCommand = repositoryCommand;
             _repositoryQuery = repositoryQuery;
