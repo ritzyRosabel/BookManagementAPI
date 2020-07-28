@@ -8,7 +8,7 @@ namespace BookManagement.Service.Implementation
 {
     public class AuthorService
     {
-        private readonly IRepositoryCommand<TEntity,TPrimaryKey> _repositoryCommand;
-        private readonly IRepositoryQuery _repositoyQuery;
+        //private readonly IRepositoryCommand<TEntity,TPrimaryKey> _repositoryCommand;
+        //private readonly IRepositoryQuery _repositoyQuery;
     }
 }

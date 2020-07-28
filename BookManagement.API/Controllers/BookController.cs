@@ -16,8 +16,8 @@ namespace BookManagement.API.Controllers
     {
         //If this code works, then it was writen by Rosabel Olugbenga. If it doesn't, then i can only say one thing  "IT IS WHAT IT IS".
 
-        private readonly IBookService<Response> _bookService;
-        public BookController(IBookService<Response> bookService)
+        private readonly IBookService _bookService;
+        public BookController(IBookService bookService)
         {
             _bookService = bookService;
         }
@@ -50,7 +50,7 @@ namespace BookManagement.API.Controllers
         [HttpPut]
         // PUT api/<BookController>/5
         [Route("api/UpdateBook")]
-        public async Task<IActionResult> Put([FromBody] Book book)
+        public async Task<IActionResult> Put([FromBody] UpdateBookRequest book)
         {
             return Ok(await _bookService.UpdateABook(book));
         }
