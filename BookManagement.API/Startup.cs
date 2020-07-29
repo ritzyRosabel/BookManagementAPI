@@ -16,6 +16,8 @@ using BookManagement.Core.Interface;
 using BookManagement.Service.Implementation;
 using BookManagement.Domain.DBRepository;
 using BookManagement.DAL.DB;
+using BookManagement.DAL.DataAccess;
+using System.Configuration;
 
 namespace BookManagement.API
 {
@@ -31,8 +33,16 @@ namespace BookManagement.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddControllers();
-              }
+            services.AddTransient(typeof(IRepositoryCommand<,>), typeof(RepositoryCommand<,>));
+            services.AddTransient(typeof(IRepositoryQuery<,>), typeof(RepositoryQuery<,>));
+
+            services.AddTransient(typeof(IBookService), typeof(BookService));
+            //services.DatabaseExtensions();
+            //services.ServiceExtensions();
+        }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

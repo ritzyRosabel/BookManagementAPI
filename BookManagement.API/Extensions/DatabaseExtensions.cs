@@ -10,11 +10,10 @@ using System.Threading.Tasks;
 
 namespace BookManagement.API.Extensions
 {
-    public class DatabaseExtensions
+    public static class DatabaseExtensions
     {
-        public static void  AddDatabaseService( IServiceCollection services, IConfiguration configuration)
+        public static void  AddDatabaseService( this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
         }
     }
 }

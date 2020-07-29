@@ -11,15 +11,12 @@ using System.Threading.Tasks;
 
 namespace BookManagement.API.Extensions
 {
-    public class ServiceExtensions
+    public static class  ServiceExtensions
     {
 
-        public static void AddApplicationServer(IServiceCollection services, IConfiguration configuration)
+        public static void AddApplicationServer(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddScoped(typeof(IRepositoryCommand<,>),typeof( RepositoryCommand<,>));
-            services.AddScoped(typeof(IRepositoryQuery<,>),typeof(RepositoryQuery<,>));
-
-            services.AddScoped(typeof(IBookService),typeof( BookService));
+            
 
 
         }
