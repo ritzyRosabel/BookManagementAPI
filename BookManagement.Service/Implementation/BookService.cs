@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BookManagement.Service.Implementation
 {
-    public class BookService<TEntity> : IBookService
+    public class BookService : IBookService
     {
         private readonly IRepositoryQuery<Book,int> _repositoryQuery;
         private readonly  IRepositoryCommand<Book, int> _repositoryCommand;
