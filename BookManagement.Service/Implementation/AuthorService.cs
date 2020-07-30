@@ -35,5 +35,12 @@ namespace BookManagement.Service.Implementation
 
         }
 
+        public async Task<Response> CreateAuthor(AuthorCreateRequest request)
+        {
+            var response = new Response();
+            var result = await _repositoryCommand.Create(request);
+            response.Data = result;
+            return response;
+        }
     }
 }
