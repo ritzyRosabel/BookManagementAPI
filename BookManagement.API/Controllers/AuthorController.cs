@@ -41,5 +41,13 @@ namespace BookManagement.API.Controllers
             return Ok(await _authorService.CreateAuthor(request));
         }
 
+        
+        [HttpPut]
+        [Route("API/v1/UpdateAuthur")]
+        public async Task<IActionResult> Update(UpdateAuthorRequest request)
+        {
+            return Ok(await _authorService.UpdateAuthor(request));
+        }
+
     }
 }
