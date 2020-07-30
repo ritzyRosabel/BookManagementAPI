@@ -63,5 +63,16 @@ namespace BookManagement.Service.Implementation
             response.Data = result;
             return response;
         }
+        public async Task<Response> Delete(int id)
+        {
+            var response  = new Response();
+            if (id == 0)
+            {
+                return response;
+            }
+            var result = await _repositoryCommand.Delete(id);
+            response.Data = result;
+            return response;
+        }
     }
 }
