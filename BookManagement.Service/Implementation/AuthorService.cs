@@ -49,5 +49,19 @@ namespace BookManagement.Service.Implementation
             response.Data = result;
             return response;
         }
+        public async Task<Response> UpdateAuthor(UpdateAuthorRequest request)
+        {
+            var response = new Response();
+            var UpdateToMake = new Author()
+            {
+                Name = request.Name,
+                Sex = request.Sex,
+                Address = request.Address,
+                BirthDate = request.BirthDate
+            };
+            var result = await _repositoryCommand.Update(UpdateToMake);
+            response.Data = result;
+            return response;
+        }
     }
 }
