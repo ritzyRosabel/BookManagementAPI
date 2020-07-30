@@ -26,7 +26,14 @@ namespace BookManagement.Service.Implementation
             response.Data = result;
             return response; 
         }
+        public async Task<Response> GetById( int id)
+        {
+            var response = new Response();
+            var result = await _repositoyQuery.GetById(id);
+            response.Data = result;
+            return response;
 
-        
+        }
+
     }
 }
