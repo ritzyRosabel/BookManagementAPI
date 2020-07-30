@@ -34,5 +34,12 @@ namespace BookManagement.API.Controllers
         }
 
 
+        [HttpPost]
+        [Route("API/v1/CreateAuthur")]
+        public async Task<IActionResult> Create(AuthorCreateRequest request)
+        {
+            return Ok(await _authorService.CreateAuthor(request));
+        }
+
     }
 }
