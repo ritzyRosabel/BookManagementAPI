@@ -49,5 +49,13 @@ namespace BookManagement.API.Controllers
             return Ok(await _authorService.UpdateAuthor(request));
         }
 
+
+        [HttpDelete]
+        [Route("API/v1/DeleteAuthur")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            return Ok(await _authorService.Delete(id));
+        }
+
     }
 }
