@@ -11,7 +11,7 @@ namespace BookManagement.Core.Interface
         Task<Response> Get();
         Task<Response> GetById(int id);
         Task<Response> CreateAuthor(AuthorCreateRequest book);
-        Task<Response> UpdateABook(UpdateAuthorRequest book);
-        Task<Response> DeleteABook(int bookID);
+        Task<Response> UpdateAuthor(UpdateAuthorRequest book);
+        Task<Response> Delete(int bookID);
     }
 }

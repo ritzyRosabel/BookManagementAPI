@@ -2,16 +2,37 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BookManagement.Core.API;
 using BookManagement.Core.Interface;
-using Microsoft.AspNetCore.Http;
+using BookManagement.DAL.Entity;
 using Microsoft.AspNetCore.Mvc;
-
 namespace BookManagement.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class AuthorController : ControllerBase
     {
-        private readonly IAuthorService
+        private readonly IAuthorService _authorService;
+        public AuthorController(IAuthorService authorService)
+        {
+            _authorService = authorService;
+        }
+
+        [HttpGet]
+        [Route("API/v1/GetAuthurs")]
+        public async Task<IActionResult> Get()
+        {
+            return  Ok( await _authorService.Get());
+        }
+
+
+        [HttpGet]
+        [Route("API/v1/GetAuthurByID")]
+        public async Task<IActionResult> GetAuthur(int id)
+        {
+            return Ok(await _authorService.GetById(id));
+        }
+
+
     }
 }
